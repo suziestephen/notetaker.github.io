@@ -22,11 +22,11 @@ function writenoteText(noteText) {
   );
 }
 
+//get 
 function getId(noteText) {
   if (noteText.length === 0) {
     return 0;
   }
-
 
 
 module.exports = app => {
