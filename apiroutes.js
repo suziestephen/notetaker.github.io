@@ -28,19 +28,12 @@ function getId(noteText) {
   }
 
 
-  const nextIndexAfterLast = noteText.length;
-  for (let i = 0; i < nextIndexAfterLast; i++) {
-    if (noteText[i].id !== i) {
-      return i;
-    }
-  }
-
-  return nextIndexAfterLast;
-}
 
 module.exports = app => {
   app.get("/api/notes", (req, res) => res.json(noteText));
 
+
+  //post
   app.post("/api/notes", (req, res) => {
     let data = req.body;
     data.id = getId(noteText);
@@ -49,6 +42,8 @@ module.exports = app => {
     return res.json(noteText);
   });
 
+
+  //delete
   app.delete("/api/notes/:id", (req, res) => {
     const id = parseInt(req.params.id);
     for (let i = 0; i < noteText.length; ++i) {
@@ -57,6 +52,8 @@ module.exports = app => {
         return;
       }
     }
+
+    //send
     writenoteText(noteText);
     res.send(noteText);
   });
