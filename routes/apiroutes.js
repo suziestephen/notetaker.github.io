@@ -43,18 +43,9 @@ module.exports = app => {
   });
 
 
-  //delete
-  app.delete("/api/notes/:id", (req, res) => {
-    const id = parseInt(req.params.id);
-    for (let i = 0; i < noteText.length; ++i) {
-      if (id === noteText[i].id) {
-        noteText.splice(i, 1);
-        return;
-      }
-    }
 
     //send
     writenoteText(noteText);
     res.send(noteText);
-  });
+  };
 };
