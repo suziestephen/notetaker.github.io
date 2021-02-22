@@ -6,7 +6,7 @@ const path = require("path");
 
 
 const noteText = JSON.parse(
-  fs.readFileSync(path.join(__dirname, "./db/db.json"), (err, data) => {
+  fs.readFileSync(path.join(__dirname, "../db/db.json"), (err, data) => {
     if (err) throw err;
   })
 );
@@ -14,7 +14,7 @@ const noteText = JSON.parse(
 //write function
 function writenoteText(noteText) {
   fs.writeFileSync(
-    path.join(__dirname, "./db/db.json"),
+    path.join(__dirname, "../db/db.json"),
     JSON.stringify(noteText),
     err => {
       if (err) throw err;
