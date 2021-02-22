@@ -39,7 +39,7 @@ SO THAT I can organize my thoughts and keep track of tasks I need to complete
   
 
   # Questions
-  Contact me for questions or comments below:
+  Contact me for questions or comments below: <br>
     [At my GitHub](https://github.com/suziestephen) <br>
     [Via Email](mailto:suzietstephen@gmail.com)
 
