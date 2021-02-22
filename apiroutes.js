@@ -44,8 +44,9 @@ module.exports = app => {
 
 
 
+
     //send
     writenoteText(noteText);
     res.send(noteText);
-  });
+  };
 };
