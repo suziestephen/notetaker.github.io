@@ -3,12 +3,15 @@
 const fs = require("fs");
 const path = require("path");
 
+
+
 const noteText = JSON.parse(
   fs.readFileSync(path.join(__dirname, "./db/db.json"), (err, data) => {
     if (err) throw err;
   })
 );
 
+//write function
 function writenoteText(noteText) {
   fs.writeFileSync(
     path.join(__dirname, "./db/db.json"),
@@ -24,7 +27,6 @@ function getId(noteText) {
     return 0;
   }
 
-  noteText.sort((a, b) => a.id - b.id);
 
   const nextIndexAfterLast = noteText.length;
   for (let i = 0; i < nextIndexAfterLast; i++) {
