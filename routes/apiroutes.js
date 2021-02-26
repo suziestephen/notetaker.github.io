@@ -21,12 +21,26 @@ function writenoteText(noteText) {
 module.exports = app => {
   app.get("/api/notes", (req, res) => res.json(noteText));
 
-  app.post("/api/notes", (req, res) => {
-    let data = req.body;
-    data.id = getId(noteText);
-    noteText.push(data);
-    writenoteText(noteText);
-    return res.json(noteText);
+
+
+  app.post('/api/notes', (req,res) => {
+    let newNote = req.body; 
+    console.log("newNote: " + newNote);
+    console.log("data: ", data);
+    data.push(newNote);
+    console.log("new note pushed");
+      fs.writeFileSync(
+        path.join(__dirname,"../db/db.json"),
+        JSON.stringify(data),
+        console.log("data passed through JSON.stringify"),
+        err => {
+        if (err) throw err;
+        }
+      );
+
+      return res.json(data);
   });
   
 };
+
+
