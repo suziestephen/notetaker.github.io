@@ -4,9 +4,21 @@
   "description": "Helps you take notes",
   "main": "server.js",
   "dependencies": {
-     "express": "^4.16.3"
+    "db": "^3.3.1",
+    "express": "^4.16.3"
   },
   "scripts": {
     "start": "node server.js"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/suziestephen/notetaker.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/suziestephen/notetaker.github.io/issues"
+  },
+  "homepage": "https://github.com/suziestephen/notetaker.github.io#readme"
 }
