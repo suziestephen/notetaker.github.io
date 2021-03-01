@@ -19,11 +19,11 @@ module.exports = app => {
     }
 
 
-    app.get("/", function(req, res){
+    app.get("/api/notes", (req, res) => {
         res.json(notesData);
     });
 
-    app.post("/api/notes", function(req, res){
+    app.post("/api/notes", (req, res) => {
 
         writeNoteText(notesData);
         console.log(notesData);
