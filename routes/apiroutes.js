@@ -9,6 +9,17 @@ const noteText = JSON.parse(
 
 console.log("text: ", noteText);
 
+function writeNoteText(noteText) {
+    fs.writeFileSync(
+            path.join(__dirname, "../db/db.json"),
+            JSON.stringify(noteText),
+            err => {
+            if (err) throw err;
+            }
+        );
+        writeNoteText(noteText);
+        return res.json(noteText);
+        };
 
 
 module.exports = app => {
@@ -21,19 +32,12 @@ module.exports = app => {
     console.log("text: ", noteText);
     data.push(newNote);
     console.log("NEW NOTE");
-        fs.writeFileSync(
-            path.join(__dirname, "../db/db.json"),
-            JSON.stringify(noteText),
-            err => {
-            if (err) throw err;
-            }
-        );
-        return res.json(noteText);
-        });
 
-        app.get("api/notes/:id", function(req,res) {
-            res.json(noteText[req.params.id]);
-            console.log("item selected")
-           });
+
+    app.get("api/notes/:id", function(req,res) {
+        res.json(noteText[req.params.id]);
+        console.log("item selected")
+        });
   
-};
+    })
+};  
