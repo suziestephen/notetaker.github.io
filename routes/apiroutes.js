@@ -7,7 +7,7 @@ const noteText = JSON.parse(
   })
 );
 
-console.log("text: ", noteText);
+console.log("data: ", noteText);
 
 
 
@@ -18,7 +18,7 @@ module.exports = app => {
   app.post("/api/notes", (req, res) => {
     let newNote = req.body;
     console.log("newNote: " + newNote);
-    console.log("text: ", noteText);
+    console.log("data: ", noteText);
     data.push(newNote);
     console.log("NEW NOTE");
         fs.writeFileSync(
