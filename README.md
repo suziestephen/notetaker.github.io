@@ -8,7 +8,7 @@ SO THAT I can organize my thoughts and keep track of tasks I need to complete
 
 
   # Heroku
-  ![heroku](https://user-images.githubusercontent.com/74234842/108702780-d4f27580-755d-11eb-870a-070099fba2f0.png)
+  ![heroku](https://media.giphy.com/media/ieUNnbGpu8SrYwyyfR/giphy.gif)
  
  
 
@@ -18,6 +18,7 @@ SO THAT I can organize my thoughts and keep track of tasks I need to complete
   * [Badges](#badges)
   * [License](#license)
   * [Contributions](#contributions)
+  * [Deploy] #deploy
   * [Questions](#questions)
   
 
@@ -35,8 +36,9 @@ SO THAT I can organize my thoughts and keep track of tasks I need to complete
   Standard methods
 
 
-  # Repository
- https://github.com/suziestephen/notetaker.github.io
+  # Deploy
+ https://github.com/suziestephen/notetaker.github.io <br>
+ https://rocky-garden-64407.herokuapp.com/
   
 
   # Questions
