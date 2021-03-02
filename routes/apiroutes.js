@@ -7,25 +7,33 @@ const noteText = JSON.parse(
   })
 );
 
-function writenoteText(noteText) {
-  fs.writeFileSync(
-    path.join(__dirname, "../db/db.json"),
-    JSON.stringify(noteText),
-    err => {
-      if (err) throw err;
-    }
-  );
-}
+console.log("text: ", noteText);
+
+
 
 module.exports = app => {
   app.get("/api/notes", (req, res) => res.json(noteText));
 
+
   app.post("/api/notes", (req, res) => {
-    let data = req.body;
-    data.id = getId(noteText);
-    noteText.push(data);
-    writenoteText(noteText);
-    return res.json(noteText);
-  });
+    let newNote = req.body;
+    console.log("newNote: " + newNote);
+    console.log("text: ", noteText);
+    data.push(newNote);
+    console.log("NEW NOTE");
+        fs.writeFileSync(
+            path.join(__dirname, "../db/db.json"),
+            JSON.stringify(noteText),
+            err => {
+            if (err) throw err;
+            }
+        );
+        return res.json(noteText);
+        });
+
+        app.get("api/notes/:id", function(req,res) {
+            res.json(noteText[req.params.id]);
+            console.log("item selected")
+           });
   
 };
